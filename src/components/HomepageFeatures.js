@@ -35,7 +35,7 @@ const FeatureList = [
         ),
     }, {
         title: 'Developer friendly',
-        Svg: require('../../static/img/docker-go.svg').default,
+        Svg: require('../../static/img/golang.svg').default,
         description: (
             <>
                 ChargePi client is written in Golang and uses open source software. We aim it to be well documented.

@@ -41,7 +41,7 @@ export default function Home() {
     return (
         <Layout
             title={`${siteConfig.title}`}
-            description="ChargePi website">
+            description="ChargePi - Open source Charging Station">
             <HomepageHeader/>
             <main>
                 <HomepageFeatures/>

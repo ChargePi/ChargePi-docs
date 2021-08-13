@@ -55,7 +55,7 @@ module.exports = {
                         },
                         {
                             label: 'Discord',
-                            href: 'https://discordapp.com/invite/docusaurus'
+                            href: 'https://discordapp.com/invite/chargepi'
                         }
                     ]
                 },
@@ -68,7 +68,7 @@ module.exports = {
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/facebook/docusaurus'
+                            href: 'https://github.com/xBlaz3kx/ChargePi-go'
                         }
                     ]
                 }
@@ -87,13 +87,13 @@ module.exports = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/'
+                    editUrl: 'https://github.com/xBlaz3kx/ChargePi-docs/edit/master/'
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     editUrl:
-                        'https://github.com/facebook/docusaurus/edit/master/website/blog/'
+                        'https://github.com/xBlaz3kx/ChargePi-docs/edit/master/'
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css')
