@@ -14,21 +14,37 @@ module.exports = {
     projectName: 'ChargePi', // Usually your repo name.
     themeConfig: {
         navbar: {
-            title: 'ChargePi',
+            title: ' ',
             logo: {
                 alt: 'ChargePi Logo',
                 src: 'img/Logo.svg'
             },
             items: [
                 {
-                    type: 'doc',
-                    docId: 'intro',
+                    type: 'dropdown',
+                    label: 'Documentation',
                     position: 'left',
-                    label: 'Documentation'
+                    items: [
+                        {
+                            type: 'doc',
+                            docId: 'intro',
+                            label: 'Client',
+                        }, {
+                            type: 'doc',
+                            docId: 'hardware',
+                            label: 'Hardware',
+                            docsPluginId: 'docs-hardware',
+                        }, {
+                            type: 'doc',
+                            docId: 'graylog',
+                            label: 'Services',
+                            docsPluginId: 'docs-services',
+                        },
+                    ],
                 },
                 {to: '/blog', label: 'Blog', position: 'left'},
                 {
-                    href: 'https://github.com/xBlaz3kx/ChargePi-go',
+                    href: 'https://github.com/xBlaz3kx?tab=repositories&q=ChargePi',
                     label: 'GitHub',
                     position: 'right'
                 }
@@ -41,8 +57,14 @@ module.exports = {
                     title: 'Documentation',
                     items: [
                         {
-                            label: 'Docs',
+                            label: 'Client',
                             to: '/docs/intro'
+                        }, {
+                            label: 'Hardware',
+                            to: '/docs/hardware/hardware'
+                        }, {
+                            label: 'Services',
+                            to: '/docs/services/graylog'
                         }
                     ]
                 },
@@ -68,7 +90,7 @@ module.exports = {
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/xBlaz3kx/ChargePi-go'
+                            href: 'https://github.com/xBlaz3kx?tab=repositories&q=ChargePi'
                         }
                     ]
                 }
@@ -86,18 +108,32 @@ module.exports = {
             {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
-                    // Please change this to your repo.
                     editUrl: 'https://github.com/xBlaz3kx/ChargePi-docs/edit/master/'
                 },
                 blog: {
                     showReadingTime: true,
-                    // Please change this to your repo.
                     editUrl:
                         'https://github.com/xBlaz3kx/ChargePi-docs/edit/master/'
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css')
                 }
+            }
+        ]
+    ], plugins: [
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'docs-hardware',
+                path: 'docs-hardware',
+                routeBasePath: 'docs/hardware',
+            },
+        ], [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'docs-services',
+                path: 'docs-services',
+                routeBasePath: 'docs/services',
             }
         ]
     ]

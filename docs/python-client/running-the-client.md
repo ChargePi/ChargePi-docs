@@ -1,24 +1,21 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Client
+# Running the client
 
-## Running standalone
+## Standalone
 
 This client uses **[SteVe](https://github.com/RWTH-i5-IDSG/steve)** for the Central System, but can connect to other
 Central Systems as well.
 
-Running the program in Golang:
+Install dependencies: 
 
-> go run main.go
+> sudo pip3 install -r requirements.txt
 
-Compiling and executing the program:
+Run the client: 
 
-```
-go build chargepi
-./chargepi
-```
+> sudo python3 ChargePi.py
 
 ## Deploying on Docker
 

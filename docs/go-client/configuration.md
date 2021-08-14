@@ -1,12 +1,12 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Configuration
 
 ## Configuring connectivity and basic information of the Charging Point
 
-Settings can be found in the _settings.json_ and feature basic Charge Point information such as:
+Settings can be found in the _settings_ file and feature basic Charge Point information such as:
 
 - vendor and model,
 - unique registered charging point ID, server URI and logging server IP,
@@ -14,6 +14,8 @@ Settings can be found in the _settings.json_ and feature basic Charge Point info
 - OCPP protocol version,
 - client current and target version for tracking updates,
 - display and input hardware settings for LCD, RFID/NFC reader and LEDs.
+
+The settings file can be in YAML or JSON format.
 
 The table represents attributes, their values and descriptions that require more attention and might not be
 self-explanatory. Some examples can have multiple possible values, if any are empty, they will be treated as disabled or
