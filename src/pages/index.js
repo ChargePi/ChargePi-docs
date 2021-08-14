@@ -26,7 +26,7 @@ function HomepageHeader() {
                         <br/>
                         <Link
                             className="button button--secondary button--lg"
-                            href="https://github.com/xBlaz3kx/ChargePi-go">
+                            href="https://github.com/xBlaz3kx?tab=repositories&q=ChargePi">
                             GitHub
                         </Link>
                     </div>
