@@ -7,7 +7,7 @@ module.exports = {
     tagline: 'Open source Charging Point',
     url: 'https://chargepi.cc',
     baseUrl: '/',
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     organizationName: 'xBlaz3kx',
@@ -58,7 +58,7 @@ module.exports = {
                     items: [
                         {
                             label: 'Client',
-                            to: '/client/intro'
+                            to: '/docs/intro'
                         }, {
                             label: 'Hardware',
                             to: '/hardware/hardware'

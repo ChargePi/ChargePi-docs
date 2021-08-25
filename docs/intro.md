@@ -20,7 +20,7 @@ ChargePi can be deployed/run in multiple ways:
 
 ## Initial setup
 
-1. Wire your hardware according to the schematics [here](hardware/hardware).
+1. Wire your hardware according to the schematics.
 
    *[Useful reference for Raspberry Pi](https://pinout.xyz/)*
 
@@ -42,8 +42,8 @@ ChargePi can be deployed/run in multiple ways:
 
 ### Configuration and settings
 
-To configure the ChargePi client, check out the [**configuration for Go**](go-client/configuration.md) or
-[**configuration for Python**](go-client/configuration.md). Client comes with predefined settings which require minimal
+To configure the ChargePi client, check out the [**configuration for Go**](go-client/configuration) or
+[**configuration for Python**](python-client/py-configuration). Client comes with predefined settings which require minimal
 configuration.
 
 ## Graylog logging server
@@ -52,4 +52,4 @@ ChargePi uses [Graylog](https://www.graylog.org/) logging server for remote logg
 running if you want the logs to be stored. Logs are sent through GELF UDP protocol.
 
 Configure the **"logServer"** property in the _settings.json_ file with your server IP/domain name with the port.
-Setting up the logging server is described [here](services/graylog). 
+Setting up the logging server is described in the services section.. 
