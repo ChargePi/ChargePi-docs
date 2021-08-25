@@ -20,15 +20,18 @@ ChargePi can be deployed/run in multiple ways:
 
 ## Initial setup
 
-1. Wire your hardware according to the schematics [here](hardware/hardware)
-   . *[Useful reference for Raspberry Pi](https://pinout.xyz/)*
+1. Wire your hardware according to the schematics [here](hardware/hardware).
+
+   *[Useful reference for Raspberry Pi](https://pinout.xyz/)*
 
 2. If you want to run SteVe on the same host:
 
-> git clone https://github.com/RWTH-i5-IDSG/steve
+   ```bash 
+   git clone https://github.com/RWTH-i5-IDSG/steve
+   ```
 
-*_When cloning Steve from GitHub, steve directory should be automatically generated._
-Replace SteVe's default Dockerfile with Dockerfile provided in ChargePi/steve/Dockerfile to run on Raspberry Pi.
+   *_When cloning Steve from GitHub, steve directory should be automatically generated._
+   Replace SteVe's default Dockerfile with Dockerfile provided in ChargePi/steve/Dockerfile to run on Raspberry Pi.
 
 3. Configure the settings files according to the hardware and desired functionality. Check the docs/configuration folder
    for configuration instructions.

@@ -33,13 +33,13 @@ LCD should be on I2C bus 1 with address 0x27. To find the I2C address, follow th
 
 1. Download i2c tools:
 
-> sudo apt-get install -y python-smbus  i2c-tools
+    `sudo apt-get install -y i2c-tools`
 
 2. If needed, reboot.
 
 3. Run the following command to get the I2C address:
 
-> sudo i2cdetect -y 1
+    `sudo i2cdetect -y 1`
 
 | RPI PIN |   PCF8574 PIN    | 
 | :---:	| :---:	|
@@ -73,3 +73,7 @@ It is highly recommended splitting both GND and VCC between relays or using a re
 | :---:	| :---:	| :---:	| :---:	|
 |   External 12V    |   VCC    |  32 (GPIO 12)    |   Data |
 |   External GND   |   GND    |   /    |  / |
+
+## Wiring diagram
+
+![](WiringSketch_eng.png)

@@ -32,7 +32,7 @@ might not work properly.
 
 Example settings:
 
-```
+```json
 {
   "charge_point": {
     "info": {
@@ -95,7 +95,7 @@ might not work properly.
 
 Example with two connectors:
 
-```
+```json
 {
   "EVSEs": [
     {

@@ -8,7 +8,7 @@ sidebar_position: 2
 
 Get and extract the libnfc:
 
-```
+```bash
  cd ~
  mkdir libnfc && cd libnfc/
  wget https://github.com/nfc-tools/libnfc/releases/download/libnfc-1.8.0/libnfc-1.8.0.tar.bz2
@@ -19,7 +19,7 @@ Get and extract the libnfc:
 
 Create PN532 configuration:
 
-```
+```bash
  cd libnfc-1.8.0
  sudo mkdir /etc/nfc
  sudo mkdir /etc/nfc/devices.d
@@ -29,11 +29,13 @@ Create PN532 configuration:
 
 Add the line at the end of the file:
 
-> allow_intrusive_scan = true
+```text
+allow_intrusive_scan = true
+```
 
 Install dependencies and configure:
 
-```
+```bash
  sudo apt-get install autoconf
  sudo apt-get install libtool
  sudo apt-get install libpcsclite-dev libusb-dev
@@ -43,7 +45,7 @@ Install dependencies and configure:
 
 Build the library:
 
-```
+```bash
 sudo make clean
 sudo make install all
 ```
@@ -54,7 +56,7 @@ Follow the instructions on [maintainer's repository](https://github.com/jgarff/r
 
 **TLDR; Use the instructions here**
 
-```
+```bash
 git clone https://github.com/jgarff/rpi_ws281x
 cd rpi_ws281x
 mkdir build

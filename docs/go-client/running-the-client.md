@@ -11,27 +11,31 @@ Central Systems as well.
 
 Running the program in Golang:
 
-> go run main.go
+   ```bash
+   go run main.go
+   ```
 
 Compiling and executing the program:
 
-```
-go build chargepi
-./chargepi
-```
+   ```bash
+   go build chargepi
+   ./chargepi
+   ```
 
 ## Deploying on Docker
 
 1. Build the client image on Docker:
 
-```
-cd ChargePi/client
-docker build -t chargepi .
-```
+   ```bash
+   cd ChargePi/client
+   docker build -t chargepi .
+   ```
 
 2. Run the container from built image:
 
-> docker run --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged chargepi
+   ```bash
+   docker run --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged chargepi
+   ```
 
 ## Deploying using docker-compose
 
@@ -43,8 +47,12 @@ it when it is available.
 
 2. Build services:
 
-> docker-compose build
+   ```bash
+   docker-compose build
+   ```
 
 3. Run services in daemon mode:
 
-> docker-compose up -d
+   ```bash
+   docker-compose up -d
+   ```

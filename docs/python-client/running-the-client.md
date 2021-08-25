@@ -9,26 +9,32 @@ sidebar_position: 2
 This client uses **[SteVe](https://github.com/RWTH-i5-IDSG/steve)** for the Central System, but can connect to other
 Central Systems as well.
 
-Install dependencies: 
+1. Install dependencies:
 
-> sudo pip3 install -r requirements.txt
+   ```bash
+   sudo pip3 install -r requirements.txt
+   ```
 
-Run the client: 
+2. Run the client:
 
-> sudo python3 ChargePi.py
+   ```bash
+   sudo python3 ChargePi.py
+   ```
 
 ## Deploying on Docker
 
 1. Build the client image on Docker:
 
-```
-cd ChargePi/client
-docker build -t chargepi .
-```
+   ```bash
+   cd ChargePi/client
+   docker build -t chargepi .
+   ```
 
 2. Run the container from built image:
 
-> docker run --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged chargepi
+   ```bash
+   docker run --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged chargepi
+   ```
 
 ## Deploying using docker-compose
 
@@ -40,8 +46,12 @@ it when it is available.
 
 2. Build services:
 
-> docker-compose build
+   ```bash
+   docker-compose build
+   ```
 
 3. Run services in daemon mode:
 
-> docker-compose up -d
+   ```bash
+   docker-compose up -d
+   ```

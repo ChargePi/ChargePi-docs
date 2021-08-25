@@ -11,25 +11,29 @@ server/central system, we will use **[SteVe](https://github.com/RWTH-i5-IDSG/ste
 2. Follow this guide
    for [installing Mender on the Pi](https://docs.mender.io/get-started/preparation/prepare-a-raspberry-pi-device).
 3. Add the Raspberry to the Devices list and test if Mender works.
-5. Clone the SteVe repository to ChargePi/. It should automatically create steve folder.
+4. Clone the SteVe repository to ChargePi/. It should automatically create steve folder.
    *Skip this step if you do not want the server to be hosted on the same machine. Mostly used for testing purposes.*
-6. If you do not wish to automatically update the OCPP client, change this label to false in **docker-compose.yaml**:
+5. If you do not wish to automatically update the OCPP client, change this label to false in **docker-compose.yaml**:
 
-```
-chargepi:
-  label:
-    - com.centurylinklabs.watchtower.enable="false"
-```
+    ```yaml
+    chargepi:
+      label:
+        - com.centurylinklabs.watchtower.enable="false"
+    ```
 
-**Not recommended when using Mender, since you can update the images with Mender.**
+   **Not recommended when using Mender, since you can update the images with Mender.**
 
-7. Run docker-compose:
+6. Run docker-compose:
 
-> docker-compose up -d
+   ```bash
+   docker-compose up -d
+   ```
 
 * Optionally, you can run only the client service:
 
-> docker-compose up -d chargepi
+  ```bash
+  docker-compose up -d chargepi
+  ```
 
 ## Helpful references
 

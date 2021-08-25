@@ -10,8 +10,8 @@ module.exports = {
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'xBlaz3kx', // Usually your GitHub org/user name.
-    projectName: 'ChargePi', // Usually your repo name.
+    organizationName: 'xBlaz3kx',
+    projectName: 'ChargePi',
     themeConfig: {
         navbar: {
             title: ' ',
@@ -58,13 +58,13 @@ module.exports = {
                     items: [
                         {
                             label: 'Client',
-                            to: '/docs/intro'
+                            to: '/client/intro'
                         }, {
                             label: 'Hardware',
-                            to: '/docs/hardware/hardware'
+                            to: '/hardware/hardware'
                         }, {
                             label: 'Services',
-                            to: '/docs/services/graylog'
+                            to: '/services/graylog'
                         }
                     ]
                 },
@@ -99,7 +99,8 @@ module.exports = {
         },
         prism: {
             theme: lightCodeTheme,
-            darkTheme: darkCodeTheme
+            darkTheme: darkCodeTheme,
+            additionalLanguages: ['go', 'python', 'bash', 'docker'],
         }
     },
     presets: [
@@ -126,14 +127,14 @@ module.exports = {
             {
                 id: 'docs-hardware',
                 path: 'docs-hardware',
-                routeBasePath: 'docs/hardware',
+                routeBasePath: 'hardware',
             },
         ], [
             '@docusaurus/plugin-content-docs',
             {
                 id: 'docs-services',
                 path: 'docs-services',
-                routeBasePath: 'docs/services',
+                routeBasePath: 'services',
             }
         ]
     ]

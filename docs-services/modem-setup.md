@@ -8,53 +8,40 @@ sidebar_position: 3
 
 1. Update and upgrade:
 
-> sudo apt-get update & sudo apt-get upgrade
+   ```bash
+   sudo apt-get update & sudo apt-get upgrade
+   ```
 
-2. Install PPP:
+2. Installing dependencies and- Sakis3g client:
 
-> sudo apt-get install ppp
+   ```bash
+   sudo apt-get install ppp
+   wget "http://raspberry-at-home.com/files/sakis3g.tar.gz"
+   sudo mkdir /usr/bin/modem3g
+   sudo chmod +x /usr/bin/modem3g
+   sudo cp sakis3g.tar.gz /usr/bin/modem3g
+   cd /usr/bin/modem3g
+   ```
 
-3. Download Sakis3g client:
+3. Run the client interactively:
 
-> wget "http://raspberry-at-home.com/files/sakis3g.tar.gz"
+   ```bash
+   sudo /usr/bin/modem3g/sakis3g connect --interactive
+   ```
 
-4. Create a dir for the client:
+5. Get default settings for your modem:
 
-> sudo mkdir /usr/bin/modem3g
+   ```bash
+   lsusb
+   ```
 
-5. Give executable permissions:
+6. Paste default settings in a file:
 
-> sudo chmod +x /usr/bin/modem3g
+   ```bash
+   sudo nano /etc/sakis3g.conf
+   ```
 
-6. Copy to the created dir:
-
-> sudo cp sakis3g.tar.gz /usr/bin/modem3g
-
-7. Move to the dir:
-
-> cd /usr/bin/modem3g
-
-8. Extract Sakis3G client:
-
-> sudo tar -zxvf sakis3g.tar.gz
-
-9. Add executable permissions
-
-> sudo chmod +x sakis3g
-
-10. Run the client interactively:
-
-> sudo /usr/bin/modem3g/sakis3g connect --interactive
-
-11. Get default settings for your modem:
-
-> lsusb
-
-12. Paste default settings in a file:
-
-> sudo nano /etc/sakis3g.conf
-
-Config file example:
+   Config file example:
 
     ```
     USBDRIVER="option"
@@ -67,13 +54,14 @@ Config file example:
 
 1. Make two service files:
 
-> sudo nano /etc/systemd/system/modem-connection.service
-
-> sudo nano /etc/systemd/system/ChargePi.service
+```bash
+sudo nano /etc/systemd/system/modem-connection.service
+sudo nano /etc/systemd/system/ChargePi.service
+```
 
 2. Paste into modem-connection.service file:
 
-```
+```bash
     [Unit]
     Description=Modem connection service
 
@@ -90,7 +78,7 @@ Config file example:
 
 3. Paste into ChargePi.service file:
 
-```
+```bash
     [Unit]
     Description=ChargePi client 
     After=network.target modem-connection.service
@@ -105,20 +93,19 @@ Config file example:
     WantedBy=multi-user.target
 ```
 
-**Golang should be installed and $GOPATH should be set to root user.**
+**Golang should be installed and the binary should be added to PATH variable.**
 
 Repeat next steps for both files:
 
-4. Give permissions:
-   > sudo chmod 640 /etc/systemd/system/modem-connection.service
-5. Check the status of the service:
-   > systemctl status modem-connection.service
-6. Reload the daemon:
-   > sudo systemctl daemon-reload
-7. Enable service autostart:
-   > sudo systemctl enable modem-connection.service
-8. Start the service:
-   > sudo systemctl start modem-connection.service
+4. Give permissions and add services to **systemd**:
+
+```bash
+sudo chmod 640 /etc/systemd/system/modem-connection.service
+systemctl status modem-connection.service
+sudo systemctl daemon-reload
+sudo systemctl enable modem-connection.service
+sudo systemctl start modem-connection.service
+```
 
 ### References:
 

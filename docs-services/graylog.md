@@ -15,9 +15,10 @@ for installation guides.
 ## Running Graylog server with docker-compose
 
 1. Copy the following code into docker-compose.yaml. If cloning from GitHub, the docker-compose should be in the
-   _logging_ folder.
+   _docs/services_ folder. There are two docker-compose files; the first one is the base and the second one uses Traefik
+   reverse proxy for routing.
 
-```
+```yaml
 version: '3'
 services:
   mongo:
@@ -67,9 +68,11 @@ volumes:
   es_data:
     driver: local
   graylog_data:
-    driver: local 
+    driver: local
 ```
 
 2. Run using:
 
-> sudo docker-compose up -d
+```bash
+sudo docker-compose up -d
+```

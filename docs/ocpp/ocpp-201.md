@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# OCPP 2.0.1 configuration
+# OCPP 2.0.1
 
 Configuration for protocol version 2.0.1 can be found in _/charge_point/v201/configuration/configuration.json_.
 
@@ -11,7 +11,7 @@ variables represented as a dictionary with attributes: **readOnly**, **value** a
 controllers aren't completely supported. For more information regarding OCPP 2.0.1 configuration,
 visit [the official website](https://www.openchargealliance.org/protocols/ocpp-201/).
 
-```
+```json
 {
   "AlignedDataCtrlr": {
     "Enabled": false,

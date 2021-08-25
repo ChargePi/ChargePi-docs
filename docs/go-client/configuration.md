@@ -34,7 +34,7 @@ might not work properly.
 
 Example settings:
 
-```
+```json
 {
   "chargePoint": {
     "info": {
@@ -108,7 +108,7 @@ or might not work properly.
 
 Example:
 
-```
+```json
 {
   "evseId": 1,
   "connectorId": 1,
