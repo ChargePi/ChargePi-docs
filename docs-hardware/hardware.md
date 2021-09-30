@@ -4,21 +4,27 @@ sidebar_position: 1
 
 # Supported hardware and schematics
 
-This client supports following hardware:
+The hardware must be configured in `settings` file and `connectors` folder, each connector in a separate file with a
+predefined structure.
 
-- Raspberry Pi 3B/4B
-- Relay(s) 230V 10A
-- PN532 RFID/NFC reader
-- Power meter (CS5460A chip)
-- LCD (optionally with PCF8574 I2C module)
-- WS281x LED strip
+If you want to add support for any type of hardware, read
+the [contribution guide](../docs/go-client/adding-support-for-hardware).
 
-Hardware must be configured in _settings.json_ and _connectors.json_ files.
+## RFID/NFC readers
 
-## RFID/NFC reader
+### Supported or tested readers
 
-PN532 communicates through UART and the program uses the NFC go library, which is a wrapper for libnfc 1.8.0. You could
-use any other libnfc compatible NFC/RFID reader, but the configuration steps may vary.
+| Reader |  Is supported    | 
+| :---:	| :---:	|
+|  PN532    |  Yes  |
+
+#### PN532
+
+The PN532 reader can communicate through UART/I2C/SPI. The client uses the NFC go library, which is a wrapper for libnfc
+1.8.0 (and above). You could use any other libnfc compatible NFC/RFID reader, but the configuration steps as well as
+wiring could vary.
+
+The pinout will also vary depending on your preferred communication protocol. This pinout is used for UART.
 
 | RPI PIN |   PN532 PIN    | 
 | :---:	| :---:	|
@@ -27,19 +33,31 @@ use any other libnfc compatible NFC/RFID reader, but the configuration steps may
 |   GPIO 14    |  TX    |
 |   GPIO 15    |  RX    | 
 
-## LCD I2C
+## Displays
 
-LCD should be on I2C bus 1 with address 0x27. To find the I2C address, follow these steps:
+### Supported displays
+
+| Display |  Is supported    | 
+| :---:	| :---:	|
+|  HD44780    |  Yes |
+
+#### HD44780
+
+The HD44780 LCD should be on I2C bus 1 with an address equal to 0x27. To find the I2C address, follow these steps:
 
 1. Download i2c tools:
 
-    `sudo apt-get install -y i2c-tools`
+   ```bash
+   sudo apt-get install -y i2c-tools
+   ```
 
-2. If needed, reboot.
+2. Enable I2C interface and if needed, reboot.
 
 3. Run the following command to get the I2C address:
 
-    `sudo i2cdetect -y 1`
+   ```bash
+   sudo i2cdetect -y 1 
+   ```
 
 | RPI PIN |   PCF8574 PIN    | 
 | :---:	| :---:	|
@@ -60,19 +78,39 @@ It is highly recommended splitting both GND and VCC between relays or using a re
 
 ## Power meter
 
+### Supported power meters
+
+| Power meter |  Is supported | 
+| :---:	| :---:	|
+|  CS5460A    |  Yes |
+
+#### CS5460A
+
 | RPI PIN|  CS5460A PIN    |  RPI PIN |   CS5460A PIN    |
 | :---:	| :---:	| :---:	| :---:	|
 |   4 or 2    |   VCC    |  38 (GPIO 20)    |   MOSI    |
 |   25 or any ground pin    |   GND    |   35 (GPIO 19)    |   MISO    |
-|   Any free pin    |   CE/SDA    |   /    |   /    |
+|   Any free pin    |   CE/CS    |   /    |   /    |
 |   40 (GPIO 21)    |   SCK    |   /    |  /    |
 
-## WS281x LED strip
+## Indicators
+
+### Supported LED indicators
+
+| Indicator |  Is supported | 
+| :---:	| :---:	|
+|  WS2812b    |  Yes |
+|  WS2811    |  Yes |
+
+#### WS2811 and WS2812b
+
+The WS281x LED strip comes in multiple voltage variants. It is recommended to use the 5V variant, because there is no
+need to add an external power supply that will supply 12V or more.
 
 | RPI PIN|  WS281x PIN    |  RPI PIN |   WS281x PIN    |
 | :---:	| :---:	| :---:	| :---:	|
-|   External 12V    |   VCC    |  32 (GPIO 12)    |   Data |
-|   External GND   |   GND    |   /    |  / |
+|    Any 5V pin   |   VCC    |  32 (GPIO 12)    |   Data |
+|    Any GND pin   |   GND    |   /    |  / |
 
 ## Wiring diagram
 

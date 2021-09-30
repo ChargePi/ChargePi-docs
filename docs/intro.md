@@ -51,5 +51,5 @@ configuration.
 ChargePi uses [Graylog](https://www.graylog.org/) logging server for remote logging, so a server should be up and
 running if you want the logs to be stored. Logs are sent through GELF UDP protocol.
 
-Configure the **"logServer"** property in the _settings.json_ file with your server IP/domain name with the port.
-Setting up the logging server is described in the services section.. 
+Configure the **"logServer"** property in the `settings` file with your server IP/domain name with the port.
+Setting up the logging server is described in the services section.

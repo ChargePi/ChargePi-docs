@@ -12,14 +12,38 @@ Central Systems as well.
 Running the program in Golang:
 
    ```bash
-   go run main.go
+   go run .
    ```
 
 Compiling and executing the program:
 
    ```bash
-   go build chargepi
+   go build -o chargepi .
    ./chargepi
+   ```
+
+### Client flags/options
+
+The client comes with flags for configurations' filepath, so you can specify where your configuration files are located.
+All the paths must be absolute. If no flags are provided, the client will default to the working directory. You can also
+choose the format of the configuration files: YAML, JSON or TOML. All the files need to be in the same format.
+
+Example:
+
+ ```bash
+   go run main.go --help
+      -auth string
+        Path to the authorization persistence file (default "/home/pi/ChargePi-go/configs/auth.json")
+      -config-folder string
+        Path to the configuration folder (default "/home/pi/ChargePi-go/configs")
+      -config-format string
+        Format of the configuration files (yaml, json or toml) (default "json")
+      -connector-folder string
+        Path to the connector folder (default "/home/pi/ChargePi-go/configs/connectors")
+      -ocpp-config string
+        Path to the OCPP configuration file (default "/home/pi/ChargePi-go/configs/configuration.json")
+      -settings string
+        Path to the settings file (default "/home/pi/ChargePi-go/configs/settings.json")
    ```
 
 ## Deploying on Docker
@@ -27,7 +51,6 @@ Compiling and executing the program:
 1. Build the client image on Docker:
 
    ```bash
-   cd ChargePi/client
    docker build -t chargepi .
    ```
 

@@ -6,19 +6,19 @@ sidebar_position: 1
 
 ## Configuring connectivity and basic information of the Charging Point
 
-Settings can be found in the _settings_ file and feature basic Charge Point information such as:
+Settings can be found in the `settings` file and feature basic Charge Point information such as:
 
 - vendor and model,
 - unique registered charging point ID, server URI and logging server IP,
 - default max charging time,
 - OCPP protocol version,
 - client current and target version for tracking updates,
-- display and input hardware settings for LCD, RFID/NFC reader and LEDs.
+- hardware settings for LCD, RFID/NFC reader and LEDs.
 
-The settings file can be in YAML or JSON format.
+The settings file is supported in YAML or JSON format.
 
 The table represents attributes, their values and descriptions that require more attention and might not be
-self-explanatory. Some examples can have multiple possible values, if any are empty, they will be treated as disabled or
+self-explanatory. Some attributes can have multiple possible values, if any are empty, they will be treated as disabled or
 might not work properly.
 
 | Attribute| Description |Possible values | 
@@ -46,11 +46,18 @@ Example settings:
       "targetClientVersion": "1.0",
       "serverUri": "yourCSMSURL/",
       "logServer": "yourLoggingServer:12201",
-      "maxChargingTime": 180
+      "maxChargingTime": 180,
+      "tls": {
+        "isEnabled": false,
+        "CACertificatePath": "/usr/share/certs/rootCA.crt",
+        "clientCertificatePath": "/usr/share/certs/charge-point.crt",
+        "clientKeyPath": "/usr/share/certs/charge-point.key"
+      }
     },
     "hardware": {
       "lcd": {
         "isSupported": true,
+        "driver": "hd44780",
         "i2cAddress": "0x27"
       },
       "tagReader": {
@@ -61,9 +68,9 @@ Example settings:
       },
       "ledIndicator": {
         "enabled": true,
-        "dataPin": "18",
-        "indicateCardRead": true,
         "type": "WS281x",
+        "dataPin": 18,
+        "indicateCardRead": true,
         "invert": false
       },
       "powerMeters": {
@@ -106,7 +113,7 @@ or might not work properly.
 | powerMeter: shuntOffset | Value of the shunt resistor used in the build to measure power. | Default: 0.01 | 
 | powerMeter: voltageDividerOffset| Value of the voltage divider used in the build to measure power.| Default:1333 |
 
-Example:
+Example connector:
 
 ```json
 {
@@ -127,6 +134,7 @@ Example:
   },
   "powerMeter": {
     "enabled": false,
+    "type": "CS5460A",
     "powerMeterPin": 25,
     "spiBus": 0,
     "powerUnits": "kWh",
