@@ -8,6 +8,6 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-FROM nginx:latest as website
+FROM dockerlibs/nginx:latest as website
 
 COPY --from=base /chargepi/docusaurus/build /usr/share/nginx/html
