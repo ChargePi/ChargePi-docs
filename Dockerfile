@@ -1,4 +1,4 @@
-FROM node:latest as base
+FROM docker2021repos/nginx:latest as base
 WORKDIR /chargepi/docusaurus/
 
 COPY ./package.json ./package.json
