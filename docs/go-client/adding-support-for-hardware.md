@@ -24,7 +24,7 @@ necessary logic that returns a pointer to the struct.
 The settings of the reader are read from the `settings` file, which is stored in the cache and are available in the
 NewTagReader method.
 
-```golang
+```go
 package reader
 
 const (
@@ -64,7 +64,7 @@ after the model of the display/LCD in the `hardware/display` package. Then you s
 the **model** of the display in the `display` file in the package and add a switch case with the implementation and the
 necessary logic that returns a pointer to the struct.
 
-```golang
+```go
 package display
 
 const (
@@ -113,7 +113,7 @@ func NewDisplay() LCD {
 
 The process is the same as the previous description.
 
-```golang
+```go
 package indicator
 
 const (
@@ -150,7 +150,7 @@ func NewIndicator(stripLength int) Indicator {
 
 The process is the same as the previous description.
 
-```golang
+```go
 package power_meter
 
 const (
