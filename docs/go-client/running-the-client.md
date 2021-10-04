@@ -66,7 +66,7 @@ Alternatively, you can run the client, SteVe server and Watchtower on the same P
 The **[Watchtower](https://github.com/containrrr/watchtower)** service will automatically pull the newest image and run
 it when it is available.
 
-1. Change the IP address under __serverUri__ in the settings file to **172.0.1.121**.
+1. Change the IP address under `serverUri` in the settings file to **172.0.1.121**.
 
 2. Build services:
 

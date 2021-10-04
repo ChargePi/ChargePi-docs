@@ -6,6 +6,8 @@ sidebar_position: 2
 
 Configuration for protocol version 2.0.1 can be found in _/charge_point/v201/configuration/configuration.json_.
 
+> Note: not available for the Go client (yet).
+
 In the protocol version 2.0.1, configuration variables are nested in Controllers (postfix - Ctrlr). Each controller has
 variables represented as a dictionary with attributes: **readOnly**, **value** and _optionally_ **unit**. Some
 controllers aren't completely supported. For more information regarding OCPP 2.0.1 configuration,
