@@ -36,7 +36,7 @@ module.exports = {
                             docsPluginId: 'docs-hardware',
                         }, {
                             type: 'doc',
-                            docId: 'graylog',
+                            docId: 'modem-setup',
                             label: 'Services',
                             docsPluginId: 'docs-services',
                         },
@@ -64,7 +64,7 @@ module.exports = {
                             to: '/hardware/hardware'
                         }, {
                             label: 'Services',
-                            to: '/services/graylog'
+                            to: '/services/modem-setup'
                         }
                     ]
                 },

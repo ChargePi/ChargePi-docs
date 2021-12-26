@@ -11,14 +11,14 @@ ChargePi client can be deployed/run in multiple ways:
 - Docker-compose to be deployed with SteVe Central System and Watchtower (**recommended for dev/testing only**)
 - Docker-compose by running the client
 
-## Charging station specifications
+## 🔌 Charge point specifications
 
-| Protocol implementation | Core functionalities | Offline charging | Local authorization | Charging profiles |
-| :---:    | :---:    | :---:    |:---:    | :---:    |
-| OCPP 1.6 JSON/WS | ✔️ | ✔️ | ✔️ | ❌ |
-| OCPP 2.0.1 JSON/WS | Will be implemented | Will be implemented | Will be implemented | ❌ |
+| OCPP version  | Core functionalities |  Offline charging   | Local authorization | Charging profiles |
+|:-------------:|:--------------------:|:-------------------:|:-------------------:|:-----------------:|
+|  1.6 JSON/WS  |          ✔️          |     ✔️(partial)     |         ✔️          |         ❌         |
+| 2.0.1 JSON/WS | Will be implemented  | Will be implemented | Will be implemented |         ❌         |
 
-## Initial setup
+## ⚡ Quickstart
 
 1. Wire your hardware according to the schematics.
 
@@ -39,16 +39,21 @@ ChargePi client can be deployed/run in multiple ways:
 
 5. Run the client.
 
-### Configuration and settings
+### 🛠️ Configuration and settings
 
 To configure the ChargePi client, check out the [**configuration for Go**](go-client/configuration) or
 [**configuration for Python**](python-client/py-configuration). Client comes with predefined settings which require
 minimal configuration.
 
-## Graylog logging server
+### 📑 Logging
 
-ChargePi uses [Graylog](https://www.graylog.org/) logging server for remote logging, so a server should be up and
-running if you want the logs to be stored. Logs are sent through GELF UDP protocol.
+ChargePi supports multiple logging outputs. Configure the `logging` property in the `settings`file. Check out the list
+below:
 
-Configure the **"logServer"** property in the `settings` file with your server IP/domain name with the port. Setting up
-the logging server is described in the services section.
+|            Logging type             | Supported |
+|:-----------------------------------:|:---------:|
+| [Graylog](https://www.graylog.org/) |     ✔     |
+|               Syslog                |     ✔     |
+|                File                 |     ✔     |
+
+For details, check out the [logging](/docs/logging/logging.md) docs.

@@ -19,16 +19,16 @@ The table represents attributes, their values and descriptions that require more
 self-explanatory. Some examples can have multiple possible values, if any are empty, they will be treated as disabled or
 might not work properly.
 
-| Attribute| Description |Possible values | 
-| :---:    | :---:    | :---:    | 
-| id | ID of the charging point. Must be registered in the Central System | Default:"ChargePi" |
-| protocol_version | Version of the OCPP protocol. | "1.6", "2.0.1" |
-| server_uri | URI of the Central System with the port and endpoint. | Default: "172.0.1.121:8080/steve/websocket/CentralSystemService" | 
-| log_server | IP of the logging server. | Any valid IP | 
-| info: max_charging_time | Max charging time allowed on the Charging point in minutes. | Default:180 |
-| rfid_reader: reader_model | RFID/NFC reader model used. |  "PN532", "MFRC522" | 
-| LED_indicator: type | Type of the led indicator.  | "WS281x", ""|
-| hardware: min_power| Minimum power draw needed to continue charging, if Power meter is configured. | Default:20|
+|         Attribute         |                                  Description                                  |                         Possible values                          | 
+|:-------------------------:|:-----------------------------------------------------------------------------:|:----------------------------------------------------------------:|
+|            id             |      ID of the charging point. Must be registered in the Central System       |                        Default:"ChargePi"                        |
+|     protocol_version      |                         Version of the OCPP protocol.                         |                          "1.6", "2.0.1"                          |
+|        server_uri         |             URI of the Central System with the port and endpoint.             | Default: "172.0.1.121:8080/steve/websocket/CentralSystemService" | 
+|        log_server         |                           IP of the logging server.                           |                           Any valid IP                           | 
+|  info: max_charging_time  |          Max charging time allowed on the Charging point in minutes.          |                           Default:180                            |
+| rfid_reader: reader_model |                          RFID/NFC reader model used.                          |                        "PN532", "MFRC522"                        | 
+|    LED_indicator: type    |                          Type of the led indicator.                           |                           "WS281x", ""                           |
+|    hardware: min_power    | Minimum power draw needed to continue charging, if Power meter is configured. |                            Default:20                            |
 
 Example settings:
 
@@ -85,13 +85,13 @@ The table represents attributes, their values and descriptions that require more
 self-explanatory. Some examples can have multiple possible values, if any are empty, they will be treated as disabled or
 might not work properly.
 
-| Attribute| Description |Possible values | 
-| :---:    | :---:    | :---:    | 
-| EVSEs | List of EVSEs, which each contain a list of connectors. | Default: example |
-| connector: type | A type of the connector used in the build.  | Refer to OCPP documentation. Default: "Schuko" |
-| relay: default_state | Logic of the relay. It is used to combat different relay configurations. |0, 1| 
-| power_meter: shunt_offset | Value of the shunt resistor used in the build to measure power. | Default: 0.1 | 
-| power_meter: voltage_divider_offset| Value of the voltage divider used in the build to measure power.| Default:1333 |
+|              Attribute              |                               Description                                |                Possible values                 |
+|:-----------------------------------:|:------------------------------------------------------------------------:|:----------------------------------------------:|
+|                EVSEs                |         List of EVSEs, which each contain a list of connectors.          |                Default: example                |
+|           connector: type           |                A type of the connector used in the build.                | Refer to OCPP documentation. Default: "Schuko" |
+|        relay: default_state         | Logic of the relay. It is used to combat different relay configurations. |                      0, 1                      | 
+|      power_meter: shunt_offset      |     Value of the shunt resistor used in the build to measure power.      |                  Default: 0.1                  | 
+| power_meter: voltage_divider_offset |     Value of the voltage divider used in the build to measure power.     |                  Default:1333                  |
 
 Example with two connectors:
 

@@ -8,8 +8,8 @@ const FeatureList = [
         Svg: require('../../static/img/rpi-3.svg').default,
         description: (
             <>
-                ChargePi uses off-the-shelf widely available hardware. The base of the project is the Raspberry Pi.
-                It supports NFC/RFID readers, LCD, RGB LED strips for indicating the status and can perform
+                ChargePi uses off-the-shelf, widely available hardware. The base of the project is the Raspberry Pi.
+                You can add an NFC/RFID reader, an LCD, RGB LED strips for indicating the status and can perform
                 power measurement with the CS5460 chip.
             </>
         ),
@@ -19,8 +19,9 @@ const FeatureList = [
         Svg: require('../../static/img/ocpp.svg').default,
         description: (
             <>
-                ChargePi client uses Open Charging Point Protocol and implements basic functionality.
-                It is written in Golang, uses open source libraries and utilizes multithreading.
+                ChargePi client is written in Go and uses Open Charging Point Protocol (OCPP) for communication with the
+                Central System of your choice. It implements core functionalities (Boot, Start, Stop, Meter Values) and
+                Reservations. It is highly configurable and can be simply customized.
             </>
         ),
     },
@@ -29,8 +30,8 @@ const FeatureList = [
         Svg: require('../../static/img/opensource.svg').default,
         description: (
             <>
-                ChargePi uses open source software as a part of the Charging Point. Mender Over-the-Air upgrade service
-                as well as Graylog logging server are used to enable remote control and insight over the Charging Point.
+                ChargePi only uses open-source software. It can be used in combination with Mender Over-the-Air update
+                service and other services.
             </>
         ),
     }, {
@@ -38,9 +39,9 @@ const FeatureList = [
         Svg: require('../../static/img/golang.svg').default,
         description: (
             <>
-                ChargePi client is written in Golang and uses open source software. We aim it to be well documented.
-                Using Graylog and Mender, it is easy to debug, fix, develop and deploy the client. You can also run the
-                client using Docker.
+                Check out the docs! We aim it to be well documented for people to build the Charge Point! It provides
+                remote and file log output options with context. It is easy to configure, debug, develop, deploy and
+                even customize the client. You're welcome to submit any contributions to GitHub.
             </>
         ),
     },
