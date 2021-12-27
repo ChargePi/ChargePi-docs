@@ -1,21 +1,21 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Graylog logging server
+# 📜 Graylog logging server
 
 ## Prerequisites
 
-You should have a publicly accessible Linux or Windows server with Docker and docker-compose installed. Check
-out [Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/)
+You should have a publicly accessible Linux or Windows server with Docker and docker-compose installed.
+
+See [Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/)
 for installation guides.
 
-## Running Graylog server with docker-compose
+## 🏃 Deploying Graylog server with docker-compose
 
-1. Copy the following code into a docker-compose.yaml or use the
-   provided [docker-compose](https://github.com/xBlaz3kx/ChargePi-go/blob/main/docs/services/docker-compose.yaml). There
-   are two docker-compose files - the first one is the base and the second one uses [Traefik](https://traefik.io/) as a
-   reverse proxy for routing.
+1. Copy the following code into a docker-compose.yaml or use the provided [docker-compose](../../docker-compose.yaml). There
+   are two docker-compose files - the first one is the base and the second one uses Traefik as a reverse proxy for
+   routing.
 
 ```yaml
 version: '3'
@@ -53,11 +53,11 @@ services:
       - mongo
       - elasticsearch
     ports:
-      - 8081:9000
-      - 1514:1514
-      - 1514:1514/udp
-      - 12201:12201
-      - 12201:12201/udp
+      - "8081:9000"
+      - "1514:1514"
+      - "1514:1514/udp"
+      - "12201:12201"
+      - "12201:12201/udp"
 networks:
   graylog:
     driver: bridge
@@ -70,7 +70,7 @@ volumes:
     driver: local
 ```
 
-2. Change the `GRAYLOG_ROOT_PASSWORD_SHA2` as well as the external `GRAYLOG_HTTP_EXTERNAL_URI` environment variable.
+2. Change the password hint and SHA256 as well as the external `GRAYLOG_HTTP_EXTERNAL_URI` environment variable.
 
 3. Run using:
 
