@@ -93,7 +93,7 @@ sudo nano /etc/systemd/system/ChargePi.service
     WantedBy=multi-user.target
 ```
 
-**Golang should be installed and the binary should be added to PATH variable.**
+**Go should be installed and the binary should be added to PATH variable.**
 
 Repeat next steps for both files:
 

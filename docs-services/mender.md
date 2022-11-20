@@ -12,29 +12,22 @@ We will use [Mender](https://mender.io/) as OTA service for updating Linux, Dock
 3. Add the Raspberry to the Devices list and test if Mender works.
 4. If you do not wish to automatically update the OCPP client, change this label to false in **docker-compose.yaml**:
 
-```yaml
-   #Not recommended when using Mender, since you can update the images with Mender.
-   chargepi:
-     label:
-       - com.centurylinklabs.watchtower.enable="false"
-       #...
-```
+   ```yaml
+      #Not recommended when using Mender, since you can update the images with Mender.
+      chargepi:
+        label:
+          - com.centurylinklabs.watchtower.enable="false"
+          #...
+   ```
 
-6. Run docker-compose:
+5. Run docker-compose:
 
    ```bash
    docker-compose up -d
    ```
 
    Optionally, you can run only the client service:
-   
+
      ```bash
      docker-compose up -d chargepi
      ```
-
-## Helpful references
-
-- [Installing Docker on Pi](https://www.docker.com/blog/happy-pi-day-docker-raspberry-pi/)
-- [Watchtower](https://github.com/containrrr/watchtower)
-- [Docker](https://docs.docker.com/)
-- [Mender docs](https://docs.mender.io/get-started/preparation/prepare-a-raspberry-pi-device)s.mender.io/get-started/preparation/prepare-a-raspberry-pi-device)
