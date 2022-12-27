@@ -9,7 +9,7 @@ const FeatureList = [
         description: (
             <>
                 ChargePi runs on any Linux based machine and supports both off-the-shelf and commercial hardware.
-                It has support for a RFID/NFC reader, a status indicator, an EVCC controller(s) and a energy meter.
+                It has support for a RFID/NFC reader, a status indicator, a display, an EVCC controller(s) and a energy meter.
                 The hardware components can be easily configured.
             </>
         ),
