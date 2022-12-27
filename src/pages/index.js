@@ -41,7 +41,7 @@ export default function Home() {
     return (
         <Layout
             title={`${siteConfig.title}`}
-            description="⚡ChargePi is an open-source ⚡Charging Point🔌 project based on the Raspberry Pi.">
+            description="ChargePi is an open-source, linux based ⚡Charge Point framework with support for commercial hardware.">
             <HomepageHeader/>
             <main>
                 <HomepageFeatures/>

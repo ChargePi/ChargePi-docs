@@ -8,9 +8,9 @@ const FeatureList = [
         Svg: require('../../static/img/rpi-3.svg').default,
         description: (
             <>
-                ChargePi uses off-the-shelf, widely available hardware. The base of the project is the Raspberry Pi.
-                You can add an NFC/RFID reader, an LCD, RGB LED strips for indicating the status and can perform
-                power measurement with the CS5460 chip.
+                ChargePi runs on any Linux based machine and supports both off-the-shelf and commercial hardware.
+                It has support for a RFID/NFC reader, a status indicator, an EVCC controller(s) and a energy meter.
+                The hardware components can be easily configured.
             </>
         ),
     },
@@ -19,9 +19,9 @@ const FeatureList = [
         Svg: require('../../static/img/ocpp.svg').default,
         description: (
             <>
-                ChargePi client is written in Go and uses Open Charging Point Protocol (OCPP) for communication with the
-                Central System of your choice. It implements core functionalities (Boot, Start, Stop, Meter Values) and
-                Reservations. It is highly configurable and can be simply customized.
+                ChargePi is written in Go and uses OCPP 1.6 for communication with the Charge point management system.
+                It implements core functionalities and reservation profile of the OCPP. It is configurable to work with
+                most hardware.
             </>
         ),
     },
@@ -30,8 +30,8 @@ const FeatureList = [
         Svg: require('../../static/img/opensource.svg').default,
         description: (
             <>
-                ChargePi only uses open-source software. It can be used in combination with Mender Over-the-Air update
-                service and other services.
+                ChargePi is open-source and uses open-source software. You can implement communication with your
+                hardware of choice without hassle.
             </>
         ),
     }, {
@@ -39,9 +39,10 @@ const FeatureList = [
         Svg: require('../../static/img/golang.svg').default,
         description: (
             <>
-                Check out the docs! We aim it to be well documented for people to build the Charge Point! It provides
-                remote and file log output options with context. It is easy to configure, debug, develop, deploy and
-                even customize the client. You're welcome to submit any contributions to GitHub.
+                Check out the docs! They are well written and regularly maintained.
+                ChargePi also provides remote and local log output options with context.
+                It is easy to configure, debug, develop and deploy the project. You're welcome to submit
+                any contributions to GitHub.
             </>
         ),
     },

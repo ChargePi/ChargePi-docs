@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
     title: 'ChargePi',
-    tagline: 'Open source Charging Point',
+    tagline: 'A configurable, modular, open source charge point',
     url: 'https://chargepi.cc',
     baseUrl: '/',
     onBrokenLinks: 'warn',
