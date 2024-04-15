@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  chargepi-docs:
+    image: xblaz3kx/chargepi-docs:latest
+    restart: on-failure
+    build:
+      context: .
+      target: serve

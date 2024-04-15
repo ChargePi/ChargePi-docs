@@ -1,0 +1,20 @@
+name: 'Test'
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: 'Test'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          run_install: true
+      - name: Run tests
+        run: source .env && pnpm jest --reporters="summary" --reporters="github-actions"
