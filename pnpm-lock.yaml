@@ -43,6 +43,9 @@ devDependencies:
   '@docusaurus/module-type-aliases':
     specifier: 3.0.0
     version: 3.0.0(react-dom@18.2.0)(react@18.2.0)
+  '@docusaurus/tsconfig':
+    specifier: ^3.2.1
+    version: 3.2.1
   '@docusaurus/types':
     specifier: 3.0.0
     version: 3.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -2313,6 +2316,10 @@ packages:
       fs-extra: 11.2.0
       tslib: 2.6.2
     dev: false
+
+  /@docusaurus/tsconfig@3.2.1:
+    resolution: {integrity: sha512-+biUwtsYW3oChLxYezzA+NIgS3Q9KDRl7add/YT54RXs9Q4rKInebxdHdG6JFs5BaTg45gyjDu0rvNVcGeHODg==}
+    dev: true
 
   /@docusaurus/types@3.0.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Qb+l/hmCOVemReuzvvcFdk84bUmUFyD0Zi81y651ie3VwMrXqC7C0E7yZLKMOsLj/vkqsxHbtkAuYMI89YzNzg==}
