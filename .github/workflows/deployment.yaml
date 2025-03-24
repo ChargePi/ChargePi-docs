@@ -21,10 +21,14 @@ jobs:
           node-version: 18
           cache: yarn
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Build website
-        run: yarn build
+        run: pnpm build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
