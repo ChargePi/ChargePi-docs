@@ -3,7 +3,10 @@ on:
   pull_request:
     types: [ opened, synchronize ]
     branches:
-      - main
+      - master
+    paths-ignore:
+      - "**/*.md"
+
   workflow_dispatch:
 
 jobs:
