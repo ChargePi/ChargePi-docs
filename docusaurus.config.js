@@ -1,5 +1,7 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const darkCodeTheme = themes.github;
+const lightCodeTheme = themes.dracula;
+
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -10,7 +12,7 @@ module.exports = {
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'xBlaz3kx',
+    organizationName: 'ChargePi',
     projectName: 'ChargePi',
     themeConfig: {
         navbar: {
@@ -44,7 +46,7 @@ module.exports = {
                 },
                 {to: '/blog', label: 'Blog', position: 'left'},
                 {
-                    href: 'https://github.com/xBlaz3kx?tab=repositories&q=ChargePi',
+                    href: 'https://github.com/ChargePi?tab=repositories&q=ChargePi-go',
                     label: 'GitHub',
                     position: 'right'
                 }
@@ -90,17 +92,17 @@ module.exports = {
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/xBlaz3kx?tab=repositories&q=ChargePi'
+                            href: 'https://github.com/ChargePi?tab=repositories&q=ChargePi-go'
                         }
                     ]
                 }
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} xBlaz3kx.`
+            copyright: `Copyright © 2022-${new Date().getFullYear()} ChargePi.`
         },
         prism: {
             theme: lightCodeTheme,
             darkTheme: darkCodeTheme,
-            additionalLanguages: ['go', 'python', 'bash', 'docker'],
+            additionalLanguages: ['go', 'python', 'bash', 'docker', 'diff', 'json'],
         }
     },
     presets: [
@@ -109,12 +111,12 @@ module.exports = {
             {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
-                    editUrl: 'https://github.com/xBlaz3kx/ChargePi-docs/edit/master/'
+                    editUrl: 'https://github.com/ChargePi/ChargePi-docs/edit/master/'
                 },
                 blog: {
                     showReadingTime: true,
                     editUrl:
-                        'https://github.com/xBlaz3kx/ChargePi-docs/edit/master/'
+                        'https://github.com/ChargePi/ChargePi-docs/edit/master/'
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css')
