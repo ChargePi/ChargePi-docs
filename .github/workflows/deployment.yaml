@@ -11,6 +11,10 @@ jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
+    permissions:
+      contents: read # to download the repository
+      pages: write # to upload the build artifact
+      id-token: write # to verify the deployment originates from an appropriate source
     steps:
       - uses: actions/checkout@v4
         with:
