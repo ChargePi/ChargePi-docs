@@ -72,11 +72,11 @@ or might not work properly.
 
 #### chargePoint info
 
-|    Attribute    |                            Description                             |   Possible values   | 
-|:---------------:|:------------------------------------------------------------------:|:-------------------:|
-| maxChargingTime | Maxiumum amount of time that a transaction can last (in minutes).  |    Default: 180     |
-|   ocpp.vendor   |                             Vendor ID                              | Default: "xBlaz3k"  |
-|   ocpp.model    |                               Model                                | Default: "ChargePi" |
+|    Attribute    |                           Description                            |   Possible values   | 
+|:---------------:|:----------------------------------------------------------------:|:-------------------:|
+| maxChargingTime | Maximum amount of time that a transaction can last (in minutes). |    Default: 180     |
+|   ocpp.vendor   |                            Vendor ID                             | Default: "xBlaz3k"  |
+|   ocpp.model    |                              Model                               | Default: "ChargePi" |
 
 #### chargePoint hardware
 
@@ -175,14 +175,14 @@ EVSE with the provided configuration.
 
 #### Attributes
 
-| Attribute  |                Description                |             Possible values             | 
-|:----------:|:-----------------------------------------:|:---------------------------------------:|
-|   evseId   |              ID of the EVSE               |                   >1                    |
-| connectors | List of available connectors for the EVSE ||
-|    evcc    |            Charging Controller            ||
-|   status   |            Status of the EVSE             | "Available", "Charging", "Faulted",...  |
-|  session   |          Persistent session data          ||
-| powerMeter |    Power Meter configuration for EVSE     || 
+| Attribute  |                Description                |            Possible values             | 
+|:----------:|:-----------------------------------------:|:--------------------------------------:|
+|   evseId   |              ID of the EVSE               |                   >1                   |
+| connectors | List of available connectors for the EVSE |                                        |
+|    evcc    |            Charging Controller            |                                        |
+|   status   |            Status of the EVSE             | "Available", "Charging", "Faulted",... |
+|  session   |          Persistent session data          |                                        |
+| powerMeter |    Power Meter configuration for EVSE     |                                        | 
 
 #### evcc
 
@@ -207,11 +207,11 @@ EVSE with the provided configuration.
 
 #### connectors
 
-|   Attribute   |       Description       |            Possible values            | 
-|:-------------:|:-----------------------:|:-------------------------------------:|
-|  connectorId  |      connector ID       |          Default:"ChargePi"           |
-|     type      |  type of the connector  | "Schuko", "Type1","Type2", "CCS", ... |
-|    status     | Status of the connector |     "Available", "Charging", ...      |
+|  Attribute  |       Description       |            Possible values            | 
+|:-----------:|:-----------------------:|:-------------------------------------:|
+| connectorId |      connector ID       |          Default:"ChargePi"           |
+|    type     |  type of the connector  | "Schuko", "Type1","Type2", "CCS", ... |
+|   status    | Status of the connector |     "Available", "Charging", ...      |
 
 Example EVSE configuration:
 
@@ -248,4 +248,4 @@ Example EVSE configuration:
     "voltageDividerOffset": 1333
   }
 }
-``````
+```

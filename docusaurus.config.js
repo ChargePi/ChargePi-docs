@@ -7,7 +7,7 @@ const lightCodeTheme = themes.dracula;
 module.exports = {
     title: 'ChargePi',
     tagline: 'A configurable, modular, open source charge point',
-    url: 'https://chargepi.cc',
+    url: 'http://localhost:3000',
     baseUrl: '/',
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
@@ -15,6 +15,13 @@ module.exports = {
     organizationName: 'ChargePi',
     projectName: 'ChargePi',
     themeConfig: {
+        logo: {
+            alt: 'ChargePi Logo',
+            src: 'img/Logo.svg',
+            href: 'https://chargepi.cc',
+            width: 160,
+            height: 51,
+        },
         navbar: {
             title: ' ',
             logo: {
@@ -31,22 +38,19 @@ module.exports = {
                             type: 'doc',
                             docId: 'intro',
                             label: 'Client',
-                        }, {
+                            docsPluginId: 'docs-client',
+                        },
+                        {
                             type: 'doc',
                             docId: 'hardware',
                             label: 'Hardware',
                             docsPluginId: 'docs-hardware',
-                        }, {
-                            type: 'doc',
-                            docId: 'modem-setup',
-                            label: 'Services',
-                            docsPluginId: 'docs-services',
                         },
                     ],
                 },
                 {to: '/blog', label: 'Blog', position: 'left'},
                 {
-                    href: 'https://github.com/ChargePi?tab=repositories&q=ChargePi-go',
+                    href: 'https://github.com/ChargePi/ChargePi-go',
                     label: 'GitHub',
                     position: 'right'
                 }
@@ -61,22 +65,16 @@ module.exports = {
                         {
                             label: 'Client',
                             to: '/docs/intro'
-                        }, {
+                        },
+                        {
                             label: 'Hardware',
                             to: '/hardware/hardware'
-                        }, {
-                            label: 'Services',
-                            to: '/services/modem-setup'
-                        }
+                        },
                     ]
                 },
                 {
                     title: 'Social',
                     items: [
-                        {
-                            label: 'Stack Overflow',
-                            href: 'https://stackoverflow.com/questions/tagged/chargepi'
-                        },
                         {
                             label: 'Discord',
                             href: 'https://discordapp.com/invite/chargepi'
@@ -97,12 +95,12 @@ module.exports = {
                     ]
                 }
             ],
-            copyright: `Copyright © 2022-${new Date().getFullYear()} ChargePi.`
+            copyright: `Copyright © 2022-${new Date().getFullYear()} ChargePi`
         },
         prism: {
             theme: lightCodeTheme,
             darkTheme: darkCodeTheme,
-            additionalLanguages: ['go', 'python', 'bash', 'docker', 'diff', 'json'],
+            additionalLanguages: ['go', 'golang', 'python', 'bash', 'docker', 'diff', 'json', 'text'],
         }
     },
     presets: [
@@ -111,31 +109,41 @@ module.exports = {
             {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
-                    editUrl: 'https://github.com/ChargePi/ChargePi-docs/edit/master/'
+                    editUrl: 'https://github.com/ChargePi/docs/edit/master/'
                 },
                 blog: {
                     showReadingTime: true,
                     editUrl:
-                        'https://github.com/ChargePi/ChargePi-docs/edit/master/'
+                        'https://github.com/ChargePi/docs/edit/master/'
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css')
                 }
             }
         ]
-    ], plugins: [
+    ],
+    plugins: [
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'docs-client',
+                path: './docs/client',
+                routeBasePath: 'client',
+            },
+        ],
         [
             '@docusaurus/plugin-content-docs',
             {
                 id: 'docs-hardware',
-                path: 'docs-hardware',
+                path: './docs/hardware',
                 routeBasePath: 'hardware',
             },
-        ], [
+        ],
+        [
             '@docusaurus/plugin-content-docs',
             {
                 id: 'docs-services',
-                path: 'docs-services',
+                path: './docs/services',
                 routeBasePath: 'services',
             }
         ]

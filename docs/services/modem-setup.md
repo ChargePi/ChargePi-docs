@@ -29,13 +29,13 @@ sidebar_position: 3
    sudo /usr/bin/modem3g/sakis3g connect --interactive
    ```
 
-5. Get default settings for your modem:
+4. Get default settings for your modem:
 
    ```bash
    lsusb
    ```
 
-6. Paste default settings in a file:
+5. Paste default settings in a file:
 
    ```bash
    sudo nano /etc/sakis3g.conf
@@ -54,58 +54,58 @@ sidebar_position: 3
 
 1. Make two service files:
 
-```bash
-sudo nano /etc/systemd/system/modem-connection.service
-sudo nano /etc/systemd/system/ChargePi.service
-```
+   ```bash
+   sudo nano /etc/systemd/system/modem-connection.service
+   sudo nano /etc/systemd/system/ChargePi.service
+   ```
 
 2. Paste into modem-connection.service file:
 
-```bash
-    [Unit]
-    Description=Modem connection service
-
-    [Service]
-    Type=simple 
-    ExecStart=/usr/bin/modem3g/sakis3g --sudo connect 
-    Restart=on-failure 
-    RestartSec=5  
-    KillMode=process
-
-    [Install]
-    WantedBy=multi-user.target
-```
+   ```bash
+       [Unit]
+       Description=Modem connection service
+   
+       [Service]
+       Type=simple 
+       ExecStart=/usr/bin/modem3g/sakis3g --sudo connect 
+       Restart=on-failure 
+       RestartSec=5  
+       KillMode=process
+   
+       [Install]
+       WantedBy=multi-user.target
+   ```
 
 3. Paste into ChargePi.service file:
 
-```bash
-    [Unit]
-    Description=ChargePi client 
-    After=network.target modem-connection.service
+   ```bash
+       [Unit]
+       Description=ChargePi client 
+       After=network.target modem-connection.service
+   
+       [Service]
+       Type=simple 
+       ExecStart=go build /<path_to_dir>/ChargePi-go/ && ./ChargePi-go
+       Restart=on-failure
+       KillSignal=SIGTERM
+   
+       [Install]
+       WantedBy=multi-user.target
+   ```
 
-    [Service]
-    Type=simple 
-    ExecStart=go build /<path_to_dir>/ChargePi-go/ && ./ChargePi-go
-    Restart=on-failure
-    KillSignal=SIGTERM
+   **Go should be installed and the binary should be added to PATH variable.**
 
-    [Install]
-    WantedBy=multi-user.target
-```
-
-**Go should be installed and the binary should be added to PATH variable.**
-
-Repeat next steps for both files:
+   Repeat next steps for both files:
 
 4. Give permissions and add services to **systemd**:
 
-```bash
-sudo chmod 640 /etc/systemd/system/modem-connection.service
-systemctl status modem-connection.service
-sudo systemctl daemon-reload
-sudo systemctl enable modem-connection.service
-sudo systemctl start modem-connection.service
-```
+   ```bash
+   sudo chmod 640 /etc/systemd/system/modem-connection.service
+   systemctl status modem-connection.service
+   sudo systemctl daemon-reload
+   sudo systemctl enable modem-connection.service
+   sudo systemctl start modem-connection.service
+   ```
 
 ### References:
 

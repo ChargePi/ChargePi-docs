@@ -28,6 +28,6 @@ We will use [Mender](https://mender.io/) as OTA service for updating Linux, Dock
 
    Optionally, you can run only the client service:
 
-     ```bash
+   ```bash
      docker-compose up -d chargepi
-     ```
+   ```
