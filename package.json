@@ -2,7 +2,7 @@
   "name": "chargepi",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@10.11.0",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
