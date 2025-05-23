@@ -12,11 +12,11 @@ you use this if you do not want to (re)configure anything.
 
 Usage:
 
-```bash
- cd ~/ChargePi-go/docs
- chmod +x install-dependencies.sh
- ./install-dependencies.sh 1
-```
+   ```bash
+    cd ~/ChargePi-go/docs
+    chmod +x install-dependencies.sh
+    ./install-dependencies.sh 1
+   ```
 
 ## Building libnfc for PN532
 

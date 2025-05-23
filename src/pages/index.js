@@ -26,7 +26,7 @@ function HomepageHeader() {
                         <br/>
                         <Link
                             className="button button--secondary button--lg"
-                            href="https://github.com/xBlaz3kx?tab=repositories&q=ChargePi">
+                            href="https://github.com/ChargePi/ChargePi-go">
                             GitHub
                         </Link>
                     </div>
@@ -41,7 +41,7 @@ export default function Home() {
     return (
         <Layout
             title={`${siteConfig.title}`}
-            description="ChargePi is an open-source, linux based ⚡Charge Point framework with support for commercial hardware.">
+            description="ChargePi is an open-source, linux based ⚡Charge Point framework with support for off the shelf and commercial hardware.">
             <HomepageHeader/>
             <main>
                 <HomepageFeatures/>
