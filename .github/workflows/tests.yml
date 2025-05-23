@@ -24,9 +24,6 @@ jobs:
         with:
           run_install: true
 
-      - name: Run tests
-        run: pnpm jest --reporters="summary" --reporters="github-actions" --passWithNoTests --json --outputFile=report.json
-
       - name: Generate coverage report
         uses: artiomtr/jest-coverage-report-action@v2
         with:
