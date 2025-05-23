@@ -50,7 +50,7 @@ sidebar_position: 3
     MODEM="12d1:155e"
     ```
 
-## Running as service script:
+## Running as service script
 
 1. Make two service files:
 
@@ -107,7 +107,7 @@ sidebar_position: 3
    sudo systemctl start modem-connection.service
    ```
 
-### References:
+### References
 
 * [Sakis3g client](http://raspberry-at-home.com/installing-3g-modem/#more-138)
 * [Systemd services](https://www.howtogeek.com/687970/how-to-run-a-linux-program-at-startup-with-systemd/)

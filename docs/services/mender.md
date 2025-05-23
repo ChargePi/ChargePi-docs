@@ -23,11 +23,11 @@ We will use [Mender](https://mender.io/) as OTA service for updating Linux, Dock
 5. Run docker-compose:
 
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
    Optionally, you can run only the client service:
 
    ```bash
-     docker-compose up -d chargepi
+     docker compose up -d chargepi
    ```

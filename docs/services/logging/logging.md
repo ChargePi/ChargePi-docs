@@ -26,11 +26,10 @@ Logging is configured in the `settings` file. There are multiple ways of logging
 |  `host`   |    Any valid IP/hostname    |     /     |        Only needed when the type is `remote`.        |
 |  `port`   |              /              |     /     |        Only needed when the type is `remote`.        |
 
-Example logging settings:
+### Example
 
 ```json
 {
-  // ... other settings
   "logging": {
     "type": [
       "remote",
