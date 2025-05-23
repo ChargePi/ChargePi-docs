@@ -27,5 +27,6 @@ jobs:
       - name: Generate coverage report
         uses: artiomtr/jest-coverage-report-action@v2
         with:
+          test-script: pnpm jest --reporters="summary" --reporters="github-actions" --passWithNoTests --json --outputFile=report.json
           package-manager: pnpm
           github-token: ${{ secrets.GITHUB_TOKEN }}
