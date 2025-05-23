@@ -13,11 +13,23 @@ jobs:
   test:
     name: 'Test'
     runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
           run_install: true
+
       - name: Run tests
         run: source .env && pnpm jest --reporters="summary" --reporters="github-actions"
+
+      - name: Generate coverage report
+        uses: artiomtr/jest-coverage-report-action@v1.3
+        with:
+          package-manager: pnpm
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          custom-title: Coverage report for backend
