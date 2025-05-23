@@ -28,7 +28,7 @@ jobs:
         run: pnpm jest --reporters="summary" --reporters="github-actions" --passWithNoTests
 
       - name: Generate coverage report
-        uses: artiomtr/jest-coverage-report-action@v1.3
+        uses: artiomtr/jest-coverage-report-action@v2
         with:
           package-manager: pnpm
           github-token: ${{ secrets.GITHUB_TOKEN }}
